@@ -8,7 +8,6 @@ def refactored_decode(message)
   intervals = get_intervals(get_char_positions(message))
 
   until intervals.empty?
-    puts intervals.length
     validate_intervals(intervals)
     max_interval = get_max_interval(intervals)
     message[max_interval[START_I]] = message[max_interval[END_I]] = "*"

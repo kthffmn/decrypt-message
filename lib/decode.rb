@@ -5,11 +5,8 @@ def decode(message)
       break
     end
     message = update_message(message, index_array)
-    puts message
   end
-  final_message = message.gsub(/_(.*)/, "")
-  puts "**************** final message ********************"
-  puts final_message
+  message.gsub(/_(.*)/, "")
 end
 
 def update_message(message, index_array)
@@ -27,7 +24,6 @@ def find_letters(message)
 
   front = 0
   max = message.length
-  puts "******* starting evaluation of #{max} characters *******"
   while front < max
     back = max - 1
     while back > front
@@ -43,7 +39,6 @@ def find_letters(message)
       end
       back -= 1
     end
-    puts "#{front}/#{max}" if front % 100 == 0
     front += 1
   end
   [front_i, back_i]
