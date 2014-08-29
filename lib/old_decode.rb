@@ -1,4 +1,4 @@
-def decode(message)
+def old_decode(message)
   until message.split("").uniq == message.split("")
     index_array = find_letters(message)
     if index_array.include? false
