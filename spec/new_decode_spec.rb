@@ -38,11 +38,14 @@ describe '#new_decode' do
   it "is at least 70,000x faster than #old_decode for 399 character strings" do
     message = "ds_kwhlgtfoxxtsffndbiggplewknfojzhibcaamjwohnzqxxcmrizaacrtzgbxy__vff_wuu_qcbodxvwalrsjzzjjsaofuevqdnmkkpcdofsspfoaqrdewvuyjmmaxlsproiwkzzbiyswwpmkvtqshlayzcoeiuugacmxenhttlenbrkopiccpmxyntojgeeyvfthwuppyjbdkkbeucgtshhsjkowmbxpgttudovzijqyf_kxaeexnswjhp__hrwadbqlosmzvyggnutxebmvkasflwiwamuxevthpnryzfddxhcetvflwg__mkkqn_oxfulpiwhdmccnb__vtcybxpkdqserevktsdxncwgqoipbyhmujzfzmnxwpucheokdys_fstbqalji"
     old_start = Time.now
-    old_decode(message)
+    old_decoded_string = old_decode(message)
     mid_point = Time.now
-    new_decode(message)
+    new_decoded_string = new_decode(message)
     new_end = Time.now
+    expect(old_decoded_string).to eq("dragon")
+    expect(new_decoded_string).to eq("dragon")
     expect((new_end - mid_point) * 70000).to be < (mid_point - old_start)
+
   end
 
 end
