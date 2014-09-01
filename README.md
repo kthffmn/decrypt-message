@@ -1,6 +1,6 @@
 # String Decryption
 
-This repo features two files: `lib/old_decode.rb` and `lib/new_decode.rb`.  Each file contains a `#decode` method which feature idential functionality. However, the latter is significantly faster for strings with a length of 50 or more. Both approaches are RSpec tested and each decrypt a string in the following ways:
+This repo features two files: `lib/old_decode.rb` and `lib/new_decode.rb`.  Each file contains a `#decode` method which offer identical functionality. However, the latter is significantly faster for strings with a length of 50 or more. Both approaches are RSpec tested and each decrypt a string in the following ways:
 
 1. Find the pair of identical characters that are farthest apart, and contain no pairs of identical characters between them (e.g. for "abcbba" the chosen characters should be the first and last `b`). In the event of a tie, choose the left-most pair (e.g. for "aabcbded" the chosen characters should be the first and second "b").
 
